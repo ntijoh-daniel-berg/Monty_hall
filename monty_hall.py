@@ -1,9 +1,10 @@
-from lib.door import Door
+from lib.game import Game
 
-door1 = Door(secret='goat')
-door2 = Door(secret='car')
-print(door1.secret)
-print(door1.grillkorv)
-print(door2.secret)
-#print(type(door1))
-#print(type(door2))
+wins = 0
+for i in range(10000):
+    game = Game(strategy='never_change')
+    if game.is_won():
+        wins += 1
+
+print wins
+
