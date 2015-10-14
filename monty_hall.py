@@ -1,10 +1,10 @@
-from lib.game import Game
+from lib.game import *
+from lib.simulation import Simulation
 
-wins = 0
-for i in range(10000):
-    game = Game(strategy='never_change')
-    if game.is_won():
-        wins += 1
+a = Simulation(NeverChangeGame, 10000)
+b = Simulation(RandomChangeGame, 10000)
+c = Simulation(AlwaysChangeGame, 10000)
 
-print wins
-
+print(a.statistics)
+print(b.statistics)
+print(c.statistics)
